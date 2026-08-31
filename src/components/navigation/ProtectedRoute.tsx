@@ -1,0 +1,1 @@
+import React from 'react';import {Redirect} from 'wouter';import {useAuthUser} from '@/hooks/useAuthUser';export function ProtectedRoute({children}:{children:React.ReactNode}){const {user,loading}=useAuthUser();if(loading)return <div className="grid min-h-screen place-items-center bg-black text-white">Loading…</div>;return user?<>{children}</>:<Redirect to="/login"/>}
